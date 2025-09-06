@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh:*)",
+      "Read(//Users/kodurimohan/.config/gh/**)",
+      "Bash(export GH_CONFIG_DIR=~/gh-config)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

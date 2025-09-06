@@ -1,0 +1,14 @@
+[phases.setup]
+nixPkgs = ["python311", "pip", "postgresql"]
+
+[phases.install]
+cmds = [
+    "pip install -r requirements.txt",
+    "python -m spacy download en_core_web_sm"
+]
+
+[phases.build]
+cmds = ["echo 'Build phase completed'"]
+
+[start]
+cmd = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
