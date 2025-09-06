@@ -7,7 +7,12 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(git remote set-url:*)"
+      "Bash(git remote set-url:*)",
+      "Bash(render:*)",
+      "Read(//Users/kodurimohan/Desktop/AI-Projects/JOB-SEARCH/jobright-ai-mvp/**)",
+      "Bash(vercel:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install)"
     ],
     "deny": [],
     "ask": []

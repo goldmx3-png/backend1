@@ -3,7 +3,7 @@ services:
     name: jobright-ai-backend
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt && python -m spacy download en_core_web_sm
+    buildCommand: pip install -r requirements.txt && python -m spacy download en_core_web_sm && alembic upgrade head
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: SECRET_KEY
@@ -17,6 +17,14 @@ services:
       - key: JWT_SECRET_KEY
         value: jobright-ai-jwt-super-secure-key-2024
       - key: DATABASE_URL
-        value: sqlite:///tmp/jobright.db
+        fromDatabase:
+          name: jobright-db
+          property: connectionString
       - key: REDIS_URL
         value: memory://
+
+databases:
+  - name: jobright-db
+    databaseName: jobright_production
+    user: jobright_user
+    plan: free
