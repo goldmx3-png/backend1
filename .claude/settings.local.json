@@ -6,7 +6,8 @@
       "Bash(export GH_CONFIG_DIR=~/gh-config)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)"
     ],
     "deny": [],
     "ask": []
