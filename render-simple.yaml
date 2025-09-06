@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: jobright-ai-backend-simple
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements-minimal.txt
+    startCommand: uvicorn app.main_minimal:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: false
+      - key: DATABASE_URL
+        value: sqlite:///app.db
